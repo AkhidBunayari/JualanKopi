@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="local.bunayari.jualankopi.MainActivity"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/coffee" />
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="TOKO KOPI ORAENAK!"
+        android:textAllCaps="true"
+        android:layout_marginBottom="13dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Berapa jumlah kopi yg ingin anda pesan? "
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="0"
+            android:id="@+id/jumlahKopi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Dibawah ini nanti dikasih checkbox mas -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+
+            <CheckBox
+                android:text="Susu\nRp. 5000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="tambahSusu"
+                android:id="@+id/susu"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:text="Cream\nRp. 3000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="tambahCream"
+                android:id="@+id/cream"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:text="Slice of Choco\nRp. 7000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="tambahSliceOfChoco"
+                android:id="@+id/sliceofchoco"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total harga: " />
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:text="Rp. 0"
+            android:id="@+id/totalKopi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!--<TextView
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:id="@+id/alertKopi"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/kurangKopi"
+                android:onClick="kurangKopi"
+                android:text="-"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <Button
+                android:id="@+id/tambahKopi"
+                android:text="+"
+                android:onClick="tambahKopi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+        </LinearLayout>
+
+            <Button
+            android:onClick="submitOrder"
+            android:id="@+id/btnOrder"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pesan Kopi"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
